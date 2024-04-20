@@ -1,3 +1,4 @@
+from tic_tac_toe.game.classic import ClassicTicTacToe
 from tic_tac_toe.player.base import PlayerSymbol
 from tic_tac_toe.player.human import Human
 
@@ -11,11 +12,16 @@ def main():
 
         print("Let's play!")
         print(player_x, 'vs', player_o)
-        player_x_move = player_x.make_move()
-        player_o_move = player_o.make_move()
 
-        print(f'Player {player_x.symbol} moves: {player_x_move}')
-        print(f'Player {player_o.symbol} moves: {player_o_move}')
+        game = ClassicTicTacToe(
+            player_x=player_x,
+            player_o=player_o,
+        )
+
+        while game.game_over is False:
+            game.play()
+
+        game.print_results()
 
     except KeyboardInterrupt:
         print('\nBye!')
