@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "tic-tac-toe"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Alarcon <walarcon14@gmail.com>"]
+readme = "README.md"
+packages = [{include = "tic_tac_toe"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.scripts]
+"tic-tac-toe" = "tic_tac_toe.main:main"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+   # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
+
