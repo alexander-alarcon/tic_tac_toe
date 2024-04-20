@@ -1,6 +1,5 @@
 from tic_tac_toe.player.base import Player, PlayerSymbol
 
-
 type PlayerOrNone = Player | None
 type Board = list[list[PlayerOrNone]]
 type BoardOrNone = Board | None
