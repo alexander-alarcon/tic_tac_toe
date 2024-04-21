@@ -138,6 +138,7 @@ class BaseTicTacToe:
             board[row][col] is None for row in range(3) for col in range(3)
         )
 
+    @abstractmethod
     def display_board(self) -> None:
         """
         Display the current state of the game board.

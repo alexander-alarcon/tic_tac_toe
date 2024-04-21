@@ -15,7 +15,11 @@ class IA(Player):
         super().__init__(symbol)
         self.level = level
 
-    def make_move(self, board: Board) -> int:
+    def make_move(
+        self,
+        board: Board,
+        hide_move: bool = False,
+    ) -> int:
         """
         Makes a move based on the IA level provided.
 

@@ -1,3 +1,5 @@
+from getpass import getpass
+
 from tic_tac_toe.player.base import Player, PlayerSymbol
 
 type PlayerOrNone = Player | None
@@ -9,7 +11,11 @@ class Human(Player):
     def __init__(self, symbol: PlayerSymbol) -> None:
         super().__init__(symbol)
 
-    def make_move(self, board: BoardOrNone = None) -> int:
+    def make_move(
+        self,
+        board: BoardOrNone = None,
+        hide_move: bool = False,
+    ) -> int:
         """
         Prompts the human player to make a move.
 
@@ -21,7 +27,11 @@ class Human(Player):
         """
         while True:
             try:
-                move = int(input('Enter your move (1-9): '))
+                if hide_move:
+                    move = int(getpass('Enter your move (1-9): '))
+                else:
+                    move = int(input('Enter your move (1-9): '))
+
                 if 1 <= move <= 9:
                     return move
                 else:

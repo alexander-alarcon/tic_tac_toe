@@ -127,7 +127,6 @@ class PlayersSetup:
             try:
                 print('\nChoose your IA level')
                 print('1. Easy')
-
                 print('0. Quit')
 
                 opponent_choice = int(input('Enter your choice: '))
@@ -140,8 +139,8 @@ class PlayersSetup:
                     case _:
                         raise ValueError
             except ValueError:
-                min_num = min(IALevelChoice)
-                max_num = max(IALevelChoice)
+                min_num = min(member.value for member in IALevelChoice)
+                max_num = max(member.value for member in IALevelChoice)
                 message = (
                     f'Please enter a number between {min_num} and {max_num}.'
                 )
