@@ -28,7 +28,11 @@ class Player(ABC):
         return f'Player(symbol={self.symbol.value!r})'
 
     @abstractmethod
-    def make_move(self, board: BoardOrNone) -> int:
+    def make_move(
+        self,
+        board: BoardOrNone,
+        hide_move: bool = False,
+    ) -> int:
         """
         Makes player move.
 
