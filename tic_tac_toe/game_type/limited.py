@@ -1,12 +1,12 @@
 from queue import Queue
 
-from tic_tac_toe.game.base import BaseTicTacToe, Move
+from tic_tac_toe.game_type.base import BaseTicTacToe, Move
 from tic_tac_toe.player.base import Player
 
 
 class LimitedMemoryTicTacToe(BaseTicTacToe):
-    def __init__(self, player_x: Player, player_o: Player) -> None:
-        super().__init__(player_x, player_o)
+    def __init__(self, player: Player, opponent: Player) -> None:
+        super().__init__(player, opponent)
         self._memory: Queue[Move] = Queue()
 
     def play(self) -> None:

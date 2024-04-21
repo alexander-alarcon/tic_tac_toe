@@ -1,8 +1,8 @@
 from enum import Enum
 
-from tic_tac_toe.game.base import BaseTicTacToe
-from tic_tac_toe.game.classic import ClassicTicTacToe
-from tic_tac_toe.game.limited import LimitedMemoryTicTacToe
+from tic_tac_toe.game_type.base import BaseTicTacToe
+from tic_tac_toe.game_type.classic import ClassicTicTacToe
+from tic_tac_toe.game_type.limited import LimitedMemoryTicTacToe
 from tic_tac_toe.player.base import Player, PlayerSymbol
 from tic_tac_toe.player.human import Human
 
