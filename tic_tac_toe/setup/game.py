@@ -14,10 +14,27 @@ class GameChoice(Enum):
 
 class GameSetup:
     def __init__(self, player: Player, opponent: Player) -> None:
+        """
+        Initializes a new instance of the GameSetup class.
+
+        Args:
+            player (Player): The player.
+            opponent (Player): The opponent.
+        """
         self.player = player
         self.opponent = opponent
 
     def initialize_game(self) -> BaseTicTacToe:
+        """
+        Initializes a game based on user input.
+
+        Returns:
+            BaseTicTacToe: An instance of the chosen game class.
+
+        Raises:
+            ValueError: If the user enters an invalid choice.
+            SystemExit: If the user chooses to quit.
+        """
         while True:
             try:
                 print('\nWhich kind of play do you want?')

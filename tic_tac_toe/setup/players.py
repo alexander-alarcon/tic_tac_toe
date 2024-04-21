@@ -24,16 +24,33 @@ class IALevelChoice(Enum):
 
 class PlayersSetup:
     def __init__(self) -> None:
+        """
+        Initializes a new instance of the PlayersSetup class.
+        """
         self.player: PlayerOrNone = None
         self.opponent: PlayerOrNone = None
 
     def initialize_players(self) -> tuple[Player, Player]:
+        """
+        Initializes the players by choosing their symbols and opponent.
+
+        Returns:
+            tuple[Player, Player]: A tuple containing as first element
+            the main player and as second the opponent.
+        """
         self._choose_symbol()
         self._choose_opponent()
 
         return self.player, self.opponent
 
     def _choose_symbol(self) -> None:
+        """
+        Prompts the user to choose a symbol.
+
+        Raises:
+            SystemExit: If the user chooses to quit.
+            ValueError: If the user enters an invalid choice.
+        """
         while True:
             try:
                 print('\nChoose your symbol')
@@ -58,6 +75,13 @@ class PlayersSetup:
                 print('Invalid input. Please enter a number between 0 and 2.')
 
     def _choose_opponent(self) -> None:
+        """
+        Prompts the user to choose an opponent.
+
+        Raises:
+            SystemExit: If the user chooses to quit.
+            ValueError: If the user enters an invalid choice.
+        """
         opponent_symbol = (
             PlayerSymbol.X
             if self.player.symbol == PlayerSymbol.O
@@ -89,6 +113,16 @@ class PlayersSetup:
                 print('Invalid input. Please enter a number between 0 and 2.')
 
     def _choose_ia_level(self) -> IALevel:
+        """
+        Prompts the user to choose the level of the IA opponent.
+
+        Returns:
+            IALevel: The chosen level of the IA opponent.
+
+        Raises:
+            SystemExit: If the user chooses to quit.
+            ValueError: If the user enters an invalid choice.
+        """
         while True:
             try:
                 print('\nChoose your IA level')

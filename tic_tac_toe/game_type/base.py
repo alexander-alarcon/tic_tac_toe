@@ -23,8 +23,8 @@ class BaseTicTacToe:
         Initializes a new instance of the BaseTicTacToeGame class.
 
         Args:
-            player_x (Player): The player who represents 'X' on the game board.
-            player_o (Player): The player who represents 'O' on the game board.
+            player (Player): The main player.
+            opponent (Player): The opponent.
         """
 
         self.player: Player = player
